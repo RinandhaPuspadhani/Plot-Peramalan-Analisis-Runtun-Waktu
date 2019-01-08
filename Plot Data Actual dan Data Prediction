@@ -1,0 +1,16 @@
+#insatall Package
+install.packages("AnalyzeTS")
+library(AnalyzeTS)
+install.packages("rlang")
+library(rlang)
+install.packages("forecast")
+library(forecast)
+#Input Data
+Kedatangan<- read.csv("E:\\SEMESTER 5\\Analisis Runtun Waktu\\UAS.csv",sep=";")
+Kedatangan
+#Membuat Data Time Series
+Kedatangan.ts<- ts(Kedatangan$Ngurah.Rai, start= c(2008,1), frequency = 12)
+Kedatangan.ts
+#Prediksi
+Prediksi= Gfuzzy.ts1(Kedatangan.ts, D1=92, D2=73, n=8, type="Chen", plot=TRUE, grid=TRUE)
+Prediksi
